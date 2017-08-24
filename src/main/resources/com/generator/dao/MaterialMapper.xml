@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.generator.dao.MaterialMapper">
+  <resultMap id="BaseResultMap" type="com.generator.domain.Material">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="key" jdbcType="CHAR" property="key" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="authorUid" jdbcType="BIGINT" property="authoruid" />
+    <result column="duration" jdbcType="SMALLINT" property="duration" />
+    <result column="playStyle" jdbcType="SMALLINT" property="playstyle" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="hot" jdbcType="TINYINT" property="hot" />
+    <result column="validDate" jdbcType="TIMESTAMP" property="validdate" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="previewPic" jdbcType="VARCHAR" property="previewpic" />
+    <result column="previewMp4" jdbcType="VARCHAR" property="previewmp4" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="buyTimes" jdbcType="INTEGER" property="buytimes" />
+    <result column="type" jdbcType="SMALLINT" property="type" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="themeType" jdbcType="VARCHAR" property="themetype" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.generator.domain.Material">
+    insert into tab_material (id, key, name, authorUid, 
+      duration, playStyle, description, 
+      hot, validDate, status, 
+      price, previewPic, previewMp4, 
+      createTime, buyTimes, type, 
+      icon, themeType, uid
+      )
+    values (#{id,jdbcType=BIGINT}, #{key,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{authoruid,jdbcType=BIGINT}, 
+      #{duration,jdbcType=SMALLINT}, #{playstyle,jdbcType=SMALLINT}, #{description,jdbcType=VARCHAR}, 
+      #{hot,jdbcType=TINYINT}, #{validdate,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, 
+      #{price,jdbcType=DECIMAL}, #{previewpic,jdbcType=VARCHAR}, #{previewmp4,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{buytimes,jdbcType=INTEGER}, #{type,jdbcType=SMALLINT}, 
+      #{icon,jdbcType=VARCHAR}, #{themetype,jdbcType=VARCHAR}, #{uid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.generator.domain.Material">
+    insert into tab_material
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="key != null">
+        key,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="authoruid != null">
+        authorUid,
+      </if>
+      <if test="duration != null">
+        duration,
+      </if>
+      <if test="playstyle != null">
+        playStyle,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="hot != null">
+        hot,
+      </if>
+      <if test="validdate != null">
+        validDate,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="previewpic != null">
+        previewPic,
+      </if>
+      <if test="previewmp4 != null">
+        previewMp4,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="buytimes != null">
+        buyTimes,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="icon != null">
+        icon,
+      </if>
+      <if test="themetype != null">
+        themeType,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="key != null">
+        #{key,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="authoruid != null">
+        #{authoruid,jdbcType=BIGINT},
+      </if>
+      <if test="duration != null">
+        #{duration,jdbcType=SMALLINT},
+      </if>
+      <if test="playstyle != null">
+        #{playstyle,jdbcType=SMALLINT},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="hot != null">
+        #{hot,jdbcType=TINYINT},
+      </if>
+      <if test="validdate != null">
+        #{validdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="previewpic != null">
+        #{previewpic,jdbcType=VARCHAR},
+      </if>
+      <if test="previewmp4 != null">
+        #{previewmp4,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="buytimes != null">
+        #{buytimes,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=SMALLINT},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="themetype != null">
+        #{themetype,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.generator.domain.Material">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="key" jdbcType="CHAR" property="key" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="authorUid" jdbcType="BIGINT" property="authoruid" />
+    <result column="duration" jdbcType="SMALLINT" property="duration" />
+    <result column="playStyle" jdbcType="SMALLINT" property="playstyle" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="hot" jdbcType="TINYINT" property="hot" />
+    <result column="validDate" jdbcType="TIMESTAMP" property="validdate" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="previewPic" jdbcType="VARCHAR" property="previewpic" />
+    <result column="previewMp4" jdbcType="VARCHAR" property="previewmp4" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="buyTimes" jdbcType="INTEGER" property="buytimes" />
+    <result column="type" jdbcType="SMALLINT" property="type" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="themeType" jdbcType="VARCHAR" property="themetype" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.generator.domain.Material">
+    insert into tab_material (id, key, name, authorUid, 
+      duration, playStyle, description, 
+      hot, validDate, status, 
+      price, previewPic, previewMp4, 
+      createTime, buyTimes, type, 
+      icon, themeType, uid
+      )
+    values (#{id,jdbcType=BIGINT}, #{key,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{authoruid,jdbcType=BIGINT}, 
+      #{duration,jdbcType=SMALLINT}, #{playstyle,jdbcType=SMALLINT}, #{description,jdbcType=VARCHAR}, 
+      #{hot,jdbcType=TINYINT}, #{validdate,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, 
+      #{price,jdbcType=DECIMAL}, #{previewpic,jdbcType=VARCHAR}, #{previewmp4,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{buytimes,jdbcType=INTEGER}, #{type,jdbcType=SMALLINT}, 
+      #{icon,jdbcType=VARCHAR}, #{themetype,jdbcType=VARCHAR}, #{uid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.generator.domain.Material">
+    insert into tab_material
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="key != null">
+        key,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="authoruid != null">
+        authorUid,
+      </if>
+      <if test="duration != null">
+        duration,
+      </if>
+      <if test="playstyle != null">
+        playStyle,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="hot != null">
+        hot,
+      </if>
+      <if test="validdate != null">
+        validDate,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="previewpic != null">
+        previewPic,
+      </if>
+      <if test="previewmp4 != null">
+        previewMp4,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="buytimes != null">
+        buyTimes,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="icon != null">
+        icon,
+      </if>
+      <if test="themetype != null">
+        themeType,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="key != null">
+        #{key,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="authoruid != null">
+        #{authoruid,jdbcType=BIGINT},
+      </if>
+      <if test="duration != null">
+        #{duration,jdbcType=SMALLINT},
+      </if>
+      <if test="playstyle != null">
+        #{playstyle,jdbcType=SMALLINT},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="hot != null">
+        #{hot,jdbcType=TINYINT},
+      </if>
+      <if test="validdate != null">
+        #{validdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="previewpic != null">
+        #{previewpic,jdbcType=VARCHAR},
+      </if>
+      <if test="previewmp4 != null">
+        #{previewmp4,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="buytimes != null">
+        #{buytimes,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=SMALLINT},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="themetype != null">
+        #{themetype,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>
